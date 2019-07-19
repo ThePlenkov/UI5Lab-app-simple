@@ -2,3 +2,38 @@ specVersion: '1.0'
 metadata:
   name: ui5lab-app-simple
 type: application
+builder:
+  bundles:
+  - bundleDefinition:
+      name: sap-ui-custom.js
+      defaultFileTypes:
+      - ".js"
+      - ".fragment.xml"
+      - ".view.xml"
+      - ".properties"
+      - ".json"
+      sections:
+
+      - mode: raw
+        filters:
+        - "ui5loader-autoconfig.js"
+        - "ui5lab/**"
+        - "!sap/viz/**"
+        resolve: true
+        sort: true
+        declareModules: false
+
+      - mode: provided
+        filters:
+        - "sap/viz/**"
+        resolve: true
+        sort: true
+        declareModules: false
+
+      - mode: require
+        filters:
+        - "sap/ui/core/Core.js"
+
+    bundleOptions:
+      optimize: true
+      numberOfParts: 2

@@ -1,23 +1,37 @@
-<mvc:View
-	controllerName="ui5lab.app.GeometryApp.controller.App"
+<mvc:View controllerName="ui5lab.app.GeometryApp.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:lab="ui5lab.geometry"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz="sap.viz.ui5.controls"
 	xmlns="sap.m">
 	<Shell>
 		<App>
 			<pages>
 				<Page title="{i18n>title}">
 					<content>
-						<Slider value="{view>/size}" min="50" max="500"/>
-						<lab:Square text="A" size="100"/>
-						<lab:Square text="wonderful" size="{view>/size}"/>
-						<lab:Square text="pile" size="80"/>
-						<lab:Square text="of" size="140"/>
-						<lab:Square text="custom" size="90"/>
-						<lab:Square text="Squares" size="170"/>
-						<lab:Square text="!" size="50"/>
-						<lab:Circle text="Circle" size="{view>/size}"/>
-						<lab:Triangle text="Triangle" size="{view>/size}" rotation="{= Math.round(${view>/size} / 2 - 100)}"/>
+
+						<lab:Square text="ui5lab Shape" tooltip="Shape from ui5lab control library dependency" size="100"/>
+
+						<viz:Popover id="idPopOver"></viz:Popover>
+						<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='bar'>
+							<viz:dataset>
+								<viz.data:FlattenedDataset data="{/milk}">
+									<viz.data:dimensions>
+										<viz.data:DimensionDefinition name="Store Name" value="{Store Name}" />
+									</viz.data:dimensions>
+									<viz.data:measures>
+										<viz.data:MeasureDefinition name="Revenue" value="{Revenue}" />
+										<viz.data:MeasureDefinition name="Cost" value="{Cost}" />
+									</viz.data:measures>
+								</viz.data:FlattenedDataset>
+							</viz:dataset>
+
+							<viz:feeds>
+								<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Revenue" />
+								<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name" />
+							</viz:feeds>
+						</viz:VizFrame>
 					</content>
 				</Page>
 			</pages>
