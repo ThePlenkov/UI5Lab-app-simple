@@ -36,4 +36,4 @@ builder:
 
     bundleOptions:
       optimize: true
-      numberOfParts: 2
+      numberOfParts: 1
