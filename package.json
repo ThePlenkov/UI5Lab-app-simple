@@ -17,13 +17,13 @@
     "buildSelfContained": "rimraf dist && ui5 build self-contained -a"
   },
   "dependencies": {
-    "@openui5/sap.m": "^1.60.1",
-    "@openui5/sap.ui.core": "^1.60.1",
-    "@openui5/themelib_sap_belize": "^1.60.1",
-    "ui5lab-library-simple": "^1.0.0"
+    "@openui5/sap.m": "^1.68.1",
+    "@openui5/sap.ui.core": "^1.68.1",
+    "@openui5/themelib_sap_belize": "^1.68.1",
+    "ui5lab-library-simple": "latest"
   },
   "devDependencies": {
-    "@ui5/cli": "*",
+    "@ui5/cli": "latest",
     "rimraf": "^2.6.2",
     "fs-extra": "^7.0.0",
     "glob": "^7.1.3",
