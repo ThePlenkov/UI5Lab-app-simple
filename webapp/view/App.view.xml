@@ -1,26 +1,32 @@
-<mvc:View
-	controllerName="ui5lab.app.GeometryApp.controller.App"
+<mvc:View controllerName="ui5lab.app.GeometryApp.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:lab="ui5lab.geometry"
+	xmlns:core="sap.ui.core"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:f="sap.f"
 	xmlns="sap.m">
-	<Shell>
-		<App>
-			<pages>
-				<Page title="{i18n>title}">
-					<content>
-						<Slider value="{view>/size}" min="50" max="500"/>
-						<lab:Square text="A" size="100"/>
-						<lab:Square text="wonderful" size="{view>/size}"/>
-						<lab:Square text="pile" size="80"/>
-						<lab:Square text="of" size="140"/>
-						<lab:Square text="custom" size="90"/>
-						<lab:Square text="Squares" size="170"/>
-						<lab:Square text="!" size="50"/>
-						<lab:Circle text="Circle" size="{view>/size}"/>
-						<lab:Triangle text="Triangle" size="{view>/size}" rotation="{= Math.round(${view>/size} / 2 - 100)}"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+	<f:DynamicPage headerExpanded="true" class="sapUiSizeCompact">
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<f:content>
+					<fb:FilterBar reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false" filterBarExpanded="true" filterContainerWidth="10rem">
+						<fb:filterItems>
+							<fb:FilterItem name="MultiComboBoxFilter" label="Test">
+								<fb:control>
+									<MultiComboBox id="testMultiSelect" >
+										<core:Item key="A" text="{i18n>appItemA}" />
+										<core:Item key="B" text="{i18n>appItemB}" />
+										<core:Item key="C" text="{i18n>appItemC}" />
+										<core:Item key="D" text="{i18n>appItemD}" />
+										<core:Item key="E" text="{i18n>appItemE}" />
+										<core:Item key="F" text="{i18n>appItemF}" />
+									</MultiComboBox>
+								</fb:control>
+							</fb:FilterItem>
+						</fb:filterItems>
+					</fb:FilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+	</f:DynamicPage>
+
 </mvc:View>

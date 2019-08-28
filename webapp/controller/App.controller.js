@@ -5,11 +5,9 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("ui5lab.app.GeometryApp.controller.App", {
+
 		onInit: function () {
-			var oViewModel = new JSONModel({
-				size : 200
-			});
-			this.getView().setModel(oViewModel, "view");
+			this.byId("testMultiSelect").setSelectedKeys(["A", "B", "C"]);
 		}
 	});
 });
