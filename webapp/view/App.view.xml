@@ -8,22 +8,8 @@
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
 				<f:content>
-					<fb:FilterBar reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false" filterBarExpanded="true" filterContainerWidth="10rem">
-						<fb:filterItems>
-							<fb:FilterItem name="MultiComboBoxFilter" label="Test">
-								<fb:control>
-									<MultiComboBox id="testMultiSelect" >
-										<core:Item key="A" text="{i18n>appItemA}" />
-										<core:Item key="B" text="{i18n>appItemB}" />
-										<core:Item key="C" text="{i18n>appItemC}" />
-										<core:Item key="D" text="{i18n>appItemD}" />
-										<core:Item key="E" text="{i18n>appItemE}" />
-										<core:Item key="F" text="{i18n>appItemF}" />
-									</MultiComboBox>
-								</fb:control>
-							</fb:FilterItem>
-						</fb:filterItems>
-					</fb:FilterBar>
+
+					<Button text="Load Child Component" press=".onLoadPress" />
 				</f:content>
 			</f:DynamicPageHeader>
 		</f:header>

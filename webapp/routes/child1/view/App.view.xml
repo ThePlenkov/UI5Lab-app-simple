@@ -1,0 +1,10 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+    <f:DynamicPage headerExpanded="true" class="sapUiSizeCompact">
+        <Text text="Child Component" />
+    </f:DynamicPage>
+
+</mvc:View>
