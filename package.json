@@ -14,7 +14,16 @@
     "test": "ui5 serve -o test/integration/opaTests.qunit.html",
     "build": "rimraf dist && ui5 build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@openui5/sap.m": "^1.68.1",
+    "@openui5/sap.ui.core": "^1.68.1",
+    "@openui5/themelib_sap_belize": "^1.68.1",
+    "ui5lab-library-simple": "latest",
+    "@sap/grunt-sapui5-bestpractice-build": "1.3.64",
+    "grunt": "^1.0.3",
+    "grunt-openui5": "^0.15.0",
+    "grunt-sapui5-config": "^1.0.0"
+  },
   "devDependencies": {
     "@ui5/cli": "latest",
     "rimraf": "^2.6.2"
